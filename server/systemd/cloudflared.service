@@ -1,0 +1,18 @@
+[Unit]
+Description=Cloudflare Tunnel
+Documentation=https://developers.cloudflare.com/cloudflare-one/connections/connect-apps
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=garden
+Group=garden
+ExecStart=/usr/local/bin/cloudflared tunnel --config /home/garden/.cloudflared/config.yml run
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

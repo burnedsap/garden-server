@@ -1,0 +1,18 @@
+[Unit]
+Description=Pocketbase
+Documentation=https://pocketbase.io
+After=network.target
+
+[Service]
+Type=simple
+User=garden
+Group=garden
+WorkingDirectory=/home/garden/pocketbase
+ExecStart=/home/garden/pocketbase/pocketbase serve --http=127.0.0.1:8090
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
