@@ -1,0 +1,13 @@
+base_url = "https://example.com"  # Replace with your Cloudflare tunnel domain
+title = "The Garden"
+description = "A shared space for projects and ideas."
+compile_sass = false
+generate_feed = false
+minify_html = false
+
+[markdown]
+highlight_code = true
+highlight_theme = "css"
+
+[extra]
+garden_name = "The Garden"
